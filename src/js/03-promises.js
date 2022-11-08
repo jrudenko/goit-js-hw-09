@@ -35,9 +35,8 @@ function onCreatePromises(e) {
   let { amount, step, delay } = dataArgument; // создадим переменную-обьект с аргументами и запишем dataArgument
 
   for (let i = 1; i <= amount; i += 1) {
-    delay += step;
     createPromise(i, delay).then(onSuccess).catch(onError); // вызов промиса и пристегиваем резулькат работы коллбеков
-
+    delay += step;
     refs.form.reset(); // восстановим стандартные значения всем элементам формы
   }
 }
